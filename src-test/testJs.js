@@ -1,15 +1,14 @@
-function zarA() {
-    let randNa = Math.trunc((Math.random()*6)+1);
-    return randNa;
-}
-function zarB() {
-    let randNb = Math.trunc((Math.random()*6)+1);
-    return randNb;
+let a;
+let b;
+
+function arunca() {
+    a = Math.trunc((Math.random()*6)+1);
+    b = Math.trunc((Math.random()*6)+1);
+    return {a,b};
 }
 
 function mesaj() {
-    let a = zarA();
-    let b = zarB();
+
     let mesaj = "";
     if (a < b) {
         mesaj = "A castigat jucatorul B";
@@ -22,4 +21,3 @@ function mesaj() {
     }
     return mesaj;
 }
-console.log(mesaj());

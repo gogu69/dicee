@@ -7,22 +7,29 @@
   <link rel="stylesheet" href="src-test/test.css">
 </head>
 <body>
-  <h1>Titul paginii</h1>
-  <p class="class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, distinctio.</p>
-  <p class="class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, distinctio.</p>
-  <h2 class="sub">Lorem.</h2>
-  <img class="zarA" src="src/images/dice1.png" alt="zar1">
-  <img class="zarB" src="src/images/dice1.png" alt="zar1">
-  <p class="class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, distinctio.</p>
-  <p class="class">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, distinctio.</p>
+  <h1>Zaruri</h1>
+  <h2 class="sub">Cine a castigat?</h2>
+  <div>
+    <h3>Jucatorul A</h3>
+    <img class="zarA" src="src/images/dice1.png" alt="zar1">
+  </div>
+  <div>
+    <h3>Jucatorul B</h3>
+    <img class="zarB" src="src/images/dice1.png" alt="zar1">
+  </div>
   <script src="src-test/testJs.js"> </script>
   <script>
-    let textJS = "src/images/dice" + zarA() +".png";
-    let textJS2 = "src/images/dice" + zarB() +".png";
+
+    let zarRez = arunca();
+    let textJS = "src/images/dice" + zarRez.a +".png";
+    let textJS2 = "src/images/dice" + zarRez.b +".png";
     let textMesaj = mesaj();
-    document.querySelector(".sub").textContent = textMesaj;
+    
     document.querySelector(".zarA").setAttribute("src", textJS);
     document.querySelector(".zarB").setAttribute("src", textJS2);
+    document.querySelector(".sub").textContent = textMesaj;
+  
+
   </script>
 </body>
 </html>
