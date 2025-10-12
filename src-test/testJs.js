@@ -1,3 +1,5 @@
+// function joc(){
+
 let a;
 let b;
 
@@ -21,3 +23,4 @@ function mesaj() {
     }
     return mesaj;
 }
+// }
