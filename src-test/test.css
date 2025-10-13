@@ -1,0 +1,65 @@
+* { 
+margin: 0;
+padding: 0;
+font: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* color: red; */
+}
+
+.jucatorA, .jucatorB, header {
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.jucatorA {
+    order: -1;
+    justify-content: flex-end;
+
+}
+
+h1 {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+
+h2 {
+    font-family: "BBH Sans Bartle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+
+h3{
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 20px;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+img {
+    height: 70%;
+    width: auto;
+}
+
+#reincepe {
+    padding: 5px;
+    margin: 5px;
+}
