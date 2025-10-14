@@ -18,12 +18,10 @@ main {
 }
 
 .jucatorA, .jucatorB, header {
-    /* border: solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* justify-content: center; */
 }
 
 .jucatorA {
@@ -62,4 +60,38 @@ img {
 #reincepe {
     padding: 5px;
     margin: 5px;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+/* animatie zaruri */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(60deg); }
+  50% { transform: rotate(-60deg); }
+  75% { transform: rotate(60deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.zarA, .zarB {
+  transition: transform 0.3s ease;
+}
+
+.animate {
+  animation: shake 0.5s;
+}
+
+/* culori */
+.zarA-color {
+    color: rgb(235, 171, 59);
+}
+
+.zarB-color {
+    color:rgb(138, 234, 5);
+}
+
+.egalitate-color {
+    color: grey;
 }

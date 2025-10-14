@@ -17,18 +17,18 @@
   <main>
   <header>
     <h1>Zaruri</h1>
-    <h2 class="sub">Cine a castigat?</h2>
-    <button id="reincepe">Reîncepe jocul</button>
+    <h2 class="sub">Apasa pe buton!</h2>
+    <button id="reincepe">Incepe jocul</button>
   </header>
     <!-- <section class="jucatori"> -->
-      <article class="jucatorA">
+      <article class="jucatorA blur">
         <!-- <figure> -->
           <img class="zarA" src="src/images/dice1.png" alt="zar1">
         <!-- </figure> -->
-        <h3>Jucatorul A</h3>
+        <h3 class="zarA-color">Jucatorul A</h3>
       </article>
-      <article class="jucatorB">
-        <h3>Jucatorul B</h3>
+      <article class="jucatorB blur">
+        <h3 class="zarB-color">Jucatorul B</h3>
         <!-- <figure> -->
           <img class="zarB" src="src/images/dice1.png" alt="zar1">
         <!-- </figure> -->
@@ -41,6 +41,12 @@
   <script src="src-test/testJs.js"> </script>
   <script>
       function joc(){
+        // let jucatorA = document.querySelectorAll(".jucatorA");
+        // jucatorA.classList.remove("blur");
+        document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
+
+      
+      animatieZaruri();
       let zarRez = arunca();
       let textJS = "src/images/dice" + zarRez.a +".png";
       let textJS2 = "src/images/dice" + zarRez.b +".png";
@@ -54,7 +60,7 @@
       }
       document.querySelector("#reincepe").addEventListener("click", joc);
       // se apeleaza functia pentru start initial
-      joc();
+      // joc();
 
   </script>
 </body>
