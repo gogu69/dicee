@@ -1,18 +1,14 @@
+// function joc(){
 
-let a = null;
-let b = null;
+let a;
+let b;
 const sub = document.querySelector(".sub");
 
-function aruncZa() {
+function arunca() {
     a = Math.trunc((Math.random()*6)+1);
-    return a;
-}
-
-function aruncZb() {
     b = Math.trunc((Math.random()*6)+1);
-    return b;
+    return {a,b};
 }
-
 
 function mesaj() {
     let mesaj = "";
@@ -35,3 +31,19 @@ function mesaj() {
 
     return mesaj;
 }
+
+function animatieZaruri() {
+  const zarA = document.querySelector(".zarA");
+  const zarB = document.querySelector(".zarB");
+
+  zarA.classList.add("animate");
+  zarB.classList.add("animate");
+
+  // Elimină clasa după animație
+  setTimeout(() => {
+    zarA.classList.remove("animate");
+    zarB.classList.remove("animate");
+  }, 500);
+}
+
+// }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina lucru JS</title>
+  <link rel="stylesheet" href="src-test/test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <main>
+  <header>
+    <h1>Zaruri</h1>
+    <h2 class="sub">Apasa pe buton!</h2>
+    <button id="reincepe">Incepe jocul</button>
+  </header>
+    <!-- <section class="jucatori"> -->
+      <article class="jucatorA blur">
+        <!-- <figure> -->
+          <img class="zarA" src="src/images/dice1.png" alt="zar1">
+        <!-- </figure> -->
+        <h3 class="zarA-color">Jucatorul A</h3>
+      </article>
+      <article class="jucatorB blur">
+        <h3 class="zarB-color">Jucatorul B</h3>
+        <!-- <figure> -->
+          <img class="zarB" src="src/images/dice1.png" alt="zar1">
+        <!-- </figure> -->
+      </article>
+  <!-- </section> -->
+  <footer>
+     <p>&copy; 2025 Jocul cu zaruri</p>
+  </footer>
+  </main>
+  <script src="src-test/testJs.js"> </script>
+  <script>
+      function joc(){
+        // let jucatorA = document.querySelectorAll(".jucatorA");
+        // jucatorA.classList.remove("blur");
+        document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
+
+      
+      animatieZaruri();
+      let zarRez = arunca();
+      let textJS = "src/images/dice" + zarRez.a +".png";
+      let textJS2 = "src/images/dice" + zarRez.b +".png";
+      let textMesaj = mesaj();
+      
+      document.querySelector(".zarA").setAttribute("src", textJS);
+      document.querySelector(".zarA").setAttribute("alt", "zar cu numarul " +  zarRez.a);
+      document.querySelector(".zarB").setAttribute("src", textJS2);
+      document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez.b);
+      document.querySelector(".sub").textContent = textMesaj;
+      }
+      document.querySelector("#reincepe").addEventListener("click", joc);
+      // se apeleaza functia pentru start initial
+      // joc();
+
+  </script>
+</body>
+</html>

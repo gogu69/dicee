@@ -18,20 +18,20 @@
   <header>
     <h1>Zaruri</h1>
     <h2 class="sub">Apasa pe buton!</h2>
-    <button id="reincepe">Incepe jocul</button>
+    <!-- <button id="reincepe">Incepe jocul</button> -->
   </header>
     <!-- <section class="jucatori"> -->
       <article class="jucatorA blur">
-        <!-- <figure> -->
+        <button id="buttZarA" class="bttnPulse">
           <img class="zarA" src="src/images/dice1.png" alt="zar1">
-        <!-- </figure> -->
+        </button>
         <h3 class="zarA-color">Jucatorul A</h3>
       </article>
       <article class="jucatorB blur">
         <h3 class="zarB-color">Jucatorul B</h3>
-        <!-- <figure> -->
+        <button id="buttZarB" class="bttnPulse">
           <img class="zarB" src="src/images/dice1.png" alt="zar1">
-        <!-- </figure> -->
+        </button>
       </article>
   <!-- </section> -->
   <footer>
@@ -40,25 +40,55 @@
   </main>
   <script src="src-test/testJs.js"> </script>
   <script>
-      function joc(){
-        // let jucatorA = document.querySelectorAll(".jucatorA");
-        // jucatorA.classList.remove("blur");
-        document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
 
-      
-      animatieZaruri();
-      let zarRez = arunca();
-      let textJS = "src/images/dice" + zarRez.a +".png";
-      let textJS2 = "src/images/dice" + zarRez.b +".png";
-      let textMesaj = mesaj();
-      
-      document.querySelector(".zarA").setAttribute("src", textJS);
-      document.querySelector(".zarA").setAttribute("alt", "zar cu numarul " +  zarRez.a);
-      document.querySelector(".zarB").setAttribute("src", textJS2);
-      document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez.b);
-      document.querySelector(".sub").textContent = textMesaj;
+    let session = null;
+    let textMesaj = null;
+
+    function jocA(){
+      // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
+      if (session === 2) {
+        alert("Nu este randul tau!");
       }
-      document.querySelector("#reincepe").addEventListener("click", joc);
+      else {
+        const zarA = document.querySelector(".zarA");
+        zarA.classList.add("animate");
+        setTimeout(() => {
+          zarA.classList.remove("animate");
+          }, 500);
+        let zarRez = aruncZa();
+        let textJS = "src/images/dice" + zarRez +".png";
+        
+        document.querySelector(".zarA").setAttribute("src", textJS);
+        document.querySelector(".zarA").setAttribute("alt", "zar cu numarul " +  zarRez);
+        }
+        session = 2
+      }
+      
+      function jocB(){
+        // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
+        if (session === 1) {
+          alert("Nu este randul tau!");
+        }
+        else {
+        const zarB = document.querySelector(".zarB");
+        zarB.classList.add("animate");
+         setTimeout(() => {
+          zarB.classList.remove("animate");
+          }, 500);
+
+        let zarRez = aruncZb();
+        let textJS2 = "src/images/dice" + zarRez +".png";
+      
+        document.querySelector(".zarB").setAttribute("src", textJS2);
+        document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez);
+        }
+        session = 1;
+        textMesaj = mesaj();
+        document.querySelector(".sub").textContent = textMesaj;
+      }
+      document.querySelector("#buttZarA").addEventListener("click", jocA);
+      document.querySelector("#buttZarB").addEventListener("click", jocB);
+
       // se apeleaza functia pentru start initial
       // joc();
 
