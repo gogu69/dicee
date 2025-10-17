@@ -29,58 +29,6 @@ main {
 }
 
 
-@media (orientation: landscape) {
-
-  main {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
-    align-content: center;
-    justify-items: center;
-    height: 100%;
-  }
-    
-  .jucatorA, .jucatorB {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .jucatorA {
-    order: 0;
-    grid-column: 2 / 3;
-  }
-
-  h3, h2 {
-    margin-top: 1rem;
-  }
-
-  /* h1 {
-    font-size: 10px;
-  }
-
-  h2 {
-    font-size: 5px;
-  } */
-
-  .zarA-color {
-    order: -1;
-  }
-
-  .jucatorB {
-    grid-column: 3 / 4;
-  }
-
-  header, footer {
-    grid-column: 1 / -1;
-  }
-  
-  img {
-  height: 30%;
-  width: auto;
-}
-}
 
 h1 {
   font-family: "BBH Sans Bartle", sans-serif;
@@ -156,4 +104,57 @@ button {
 
 .alert {
   color: red;
+}
+
+@media (orientation: landscape) {
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    align-content: center;
+    justify-items: center;
+    height: 100%;
+  }
+    
+  .jucatorA, .jucatorB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .jucatorA {
+    order: 0;
+    grid-column: 2 / 3;
+  }
+
+  h3, h2 {
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 5px;
+  }
+
+  .zarA-color {
+    order: -1;
+  }
+
+  .jucatorB {
+    grid-column: 3 / 4;
+  }
+
+  header, footer {
+    grid-column: 1 / -1;
+  }
+
+  img {
+  height: 30%;
+  width: auto;
+}
 }
