@@ -39,7 +39,7 @@
   <script src="src/main.js"> </script>
   <script>
 
-    let session = null;
+    let session = 1;
     let textMesaj = null;
 
     function jocA(){
@@ -85,10 +85,10 @@
       
         document.querySelector(".zarB").setAttribute("src", textJS2);
         document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez);
-        }
         textMesaj = mesaj();
         document.querySelector(".sub").textContent = textMesaj;
         session = 1;
+        }
       }
     document.querySelector("#buttZarA").addEventListener("click", jocA);
     document.querySelector("#buttZarB").addEventListener("click", jocB);

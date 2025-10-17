@@ -34,9 +34,10 @@ main {
   main {
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    gap: 10px;
     align-content: center;
     justify-items: center;
-    height: 100vh;
+    height: 100%;
   }
     
   .jucatorA, .jucatorB {
@@ -52,8 +53,16 @@ main {
   }
 
   h3, h2 {
-    margin-top:1.5rem;
+    margin-top: 1rem;
   }
+
+  /* h1 {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 5px;
+  } */
 
   .zarA-color {
     order: -1;
@@ -66,6 +75,11 @@ main {
   header, footer {
     grid-column: 1 / -1;
   }
+  
+  img {
+  height: 30%;
+  width: auto;
+}
 }
 
 h1 {
