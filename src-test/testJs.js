@@ -1,4 +1,3 @@
-
 let a = null;
 let b = null;
 const sub = document.querySelector(".sub");
@@ -13,25 +12,33 @@ function aruncZb() {
     return b;
 }
 
-
 function mesaj() {
     let mesaj = "";
     if (a < b) {
         mesaj = "A castigat jucatorul B";
-        sub.classList.remove("zarA-color", "egalitate-color");
-        sub.classList.add("zarB-color");
+        // sub.classList.remove("zarA-color", "egalitate-color");
+        // sub.classList.add("zarB-color");
         
     }
     else if (a > b){
         mesaj = "A castigat jucatorul A";
-        sub.classList.remove("zarB-color","egalitate-color");
-        sub.classList.add("zarA-color");
+        // sub.classList.remove("zarB-color","egalitate-color");
+        // sub.classList.add("zarA-color");
     } 
     else {
         mesaj = "Egalitate!";
-        sub.classList.remove("zarA-color", "zarB-color");
-        sub.classList.add("egalitate-color");
+        // sub.classList.remove("zarA-color", "zarB-color");
+        // sub.classList.add("egalitate-color");
     }
 
     return mesaj;
+}
+
+function afiseazaMesaj() {
+//   const box = document.getElementById("notificare");
+  sub.textContent = "Nu este randul tau!";
+//   box.style.display = "block";
+//   box.style.background = "#ffd";
+//   box.style.padding = "10px";
+//   box.style.border = "1px solid #ccc";
 }

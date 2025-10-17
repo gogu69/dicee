@@ -1,33 +1,71 @@
 * { 
-margin: 0;
-padding: 0;
-font: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    /* color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .jucatorA, .jucatorB, header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.jucatorA {
+  order: -1;
+  justify-content: flex-end;
+}
+
+
+@media (orientation: landscape) {
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-content: center;
+    justify-items: center;
+    height: 100vh;
+  }
+    
+  .jucatorA, .jucatorB {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+  }
 
-.jucatorA {
+  .jucatorA {
+    order: 0;
+    grid-column: 2 / 3;
+  }
+
+  h3, h2 {
+    margin-top:1.5rem;
+  }
+
+  .zarA-color {
     order: -1;
-    justify-content: flex-end;
+  }
 
+  .jucatorB {
+    grid-column: 3 / 4;
+  }
+
+  header, footer {
+    grid-column: 1 / -1;
+  }
 }
 
 h1 {
@@ -38,32 +76,26 @@ h1 {
 }
 
 h2 {
-    font-family: "BBH Sans Bartle", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 }
 
-
-h3{
+h3 {
   font-family: "Playwrite US Modern", cursive;
   font-size: 20px;
-  font-weight: <weight>;
   font-style: normal;
 }
 
 img {
-    height: 70%;
-    width: auto;
+  height: 70%;
+  width: auto;
 }
 
 #reincepe {
-    padding: 5px;
-    margin: 5px;
-}
-
-.blur {
-    /* filter: blur(5px); */
+  padding: 5px;
+  margin: 5px;
 }
 
 /* animatie zaruri */
@@ -75,14 +107,11 @@ img {
   100% { transform: rotate(0deg); }
 }
 
-.zarA, .zarB {
-  transition: transform 0.3s ease;
-}
-
 .animate {
   animation: shake 0.5s;
 }
 
+/* animatie buton */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }
@@ -90,23 +119,27 @@ img {
 }
 
 .bttnPulse:hover {
-    animation: pulse 0.5s;
+  animation: pulse 0.5s;
 }
 
 /* culori */
 .zarA-color {
-    color: rgb(235, 171, 59);
+  color: rgb(235, 171, 59);
 }
 
 .zarB-color {
-    color:rgb(138, 234, 5);
+  color:rgb(138, 234, 5);
 }
 
 .egalitate-color {
-    color: grey;
+  color: grey;
 }
 
 button {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
+}
+
+.alert {
+  color: red;
 }

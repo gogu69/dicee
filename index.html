@@ -11,33 +11,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Modern:wght@100..400&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
   <main>
-  <header>
-    <h1>Zaruri</h1>
-    <h2 class="sub">Apasa pe buton!</h2>
-    <!-- <button id="reincepe">Incepe jocul</button> -->
-  </header>
-    <!-- <section class="jucatori"> -->
-      <article class="jucatorA blur">
-        <button id="buttZarA" class="bttnPulse">
-          <img class="zarA" src="src/images/dice1.png" alt="zar1">
-        </button>
-        <h3 class="zarA-color">Jucatorul A</h3>
-      </article>
-      <article class="jucatorB blur">
-        <h3 class="zarB-color">Jucatorul B</h3>
-        <button id="buttZarB" class="bttnPulse">
-          <img class="zarB" src="src/images/dice1.png" alt="zar1">
-        </button>
-      </article>
-  <!-- </section> -->
-  <footer>
-     <p>&copy; 2025 Jocul cu zaruri</p>
-  </footer>
+    <header>
+      <h1>Zaruri</h1>
+      <h2 class="sub">Apasa pe zar.<br> Primul este jucatorul A!</h2>
+    </header>
+    <article class="jucatorA blur">
+      <button id="buttZarA" class="bttnPulse">
+        <img class="zarA" src="src/images/dice1.png" alt="zar1">
+      </button>
+      <h3 class="zarA-color">Jucatorul A</h3>
+    </article>
+    <article class="jucatorB blur">
+      <h3 class="zarB-color">Jucatorul B</h3>
+      <button id="buttZarB" class="bttnPulse">
+        <img class="zarB" src="src/images/dice1.png" alt="zar1">
+      </button>
+    </article>
+    <footer>
+      <p>&copy; 2025 Jocul cu zaruri</p>
+    </footer>
   </main>
+
   <script src="src-test/testJs.js"> </script>
   <script>
 
@@ -48,8 +46,11 @@
       // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
       if (session === 2) {
         alert("Nu este randul tau!");
+        // sub.classList.add("alert");
+        // afiseazaMesaj();
       }
       else {
+        // sub.classList.remove("alert");
         const zarA = document.querySelector(".zarA");
         zarA.classList.add("animate");
         setTimeout(() => {
@@ -62,14 +63,17 @@
         document.querySelector(".zarA").setAttribute("alt", "zar cu numarul " +  zarRez);
         }
         session = 2
-      }
+    }
       
-      function jocB(){
+    function jocB(){
         // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
         if (session === 1) {
           alert("Nu este randul tau!");
-        }
-        else {
+          // sub.classList.add("alert");
+          // afiseazaMesaj();
+      }
+      else {
+        // sub.classList.remove("alert");
         const zarB = document.querySelector(".zarB");
         zarB.classList.add("animate");
          setTimeout(() => {
@@ -82,16 +86,13 @@
         document.querySelector(".zarB").setAttribute("src", textJS2);
         document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez);
         }
-        session = 1;
         textMesaj = mesaj();
         document.querySelector(".sub").textContent = textMesaj;
+        session = 1;
       }
-      document.querySelector("#buttZarA").addEventListener("click", jocA);
-      document.querySelector("#buttZarB").addEventListener("click", jocB);
-
-      // se apeleaza functia pentru start initial
-      // joc();
-
+    document.querySelector("#buttZarA").addEventListener("click", jocA);
+    document.querySelector("#buttZarB").addEventListener("click", jocB);
   </script>
+
 </body>
 </html>
