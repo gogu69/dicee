@@ -28,8 +28,6 @@ main {
   justify-content: flex-end;
 }
 
-
-
 h1 {
   font-family: "BBH Sans Bartle", sans-serif;
   font-weight: 400;
@@ -122,15 +120,12 @@ button {
     align-content: center;
     justify-content: center;
     justify-items: center;
-    /* height: 100vh; */
+    height: 85vh;
   }
     
   .jucatorA, .jucatorB {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
   }
 
   .jucatorA {
@@ -138,9 +133,6 @@ button {
     grid-column: 2 / 3;
   }
 
-  h3, h2 {
-    /* margin-top: 1vh; */
-  }
 
   h1 {
     font-size: 8vh;
@@ -171,5 +163,5 @@ button {
   img {
   height: 45vh;
   width: auto;
-}
+  }
 }
