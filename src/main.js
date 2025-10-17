@@ -1,24 +1,44 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+let a = null;
+let b = null;
+const sub = document.querySelector(".sub");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+function aruncZa() {
+    a = Math.trunc((Math.random()*6)+1);
+    return a;
+}
 
-setupCounter(document.querySelector('#counter'))
+function aruncZb() {
+    b = Math.trunc((Math.random()*6)+1);
+    return b;
+}
+
+function mesaj() {
+    let mesaj = "";
+    if (a < b) {
+        mesaj = "A castigat jucatorul B";
+        // sub.classList.remove("zarA-color", "egalitate-color");
+        // sub.classList.add("zarB-color");
+        
+    }
+    else if (a > b){
+        mesaj = "A castigat jucatorul A";
+        // sub.classList.remove("zarB-color","egalitate-color");
+        // sub.classList.add("zarA-color");
+    } 
+    else {
+        mesaj = "Egalitate!";
+        // sub.classList.remove("zarA-color", "zarB-color");
+        // sub.classList.add("egalitate-color");
+    }
+
+    return mesaj;
+}
+
+function afiseazaMesaj() {
+//   const box = document.getElementById("notificare");
+  sub.textContent = "Nu este randul tau!";
+//   box.style.display = "block";
+//   box.style.background = "#ffd";
+//   box.style.padding = "10px";
+//   box.style.border = "1px solid #ccc";
+}
