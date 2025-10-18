@@ -17,7 +17,8 @@
   <main>
     <header>
       <h1>Zaruri</h1>
-      <h2 class="sub">Apasa pe zar.<br> Primul este jucatorul A!</h2>
+      <h2 class="sub">Apasa pe zar. <br>Jucatorul A este primul!</h2>
+      <h2 class="rezultat"></h2>
     </header>
     <article class="jucatorA blur">
       <button id="buttZarA" class="bttnPulse">
@@ -43,37 +44,40 @@
     let textMesaj = null;
 
     function jocA(){
+      document.querySelector(".rezultat").textContent = "";
       // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
       if (session === 2) {
-        alert("Nu este randul tau!");
-        // sub.classList.add("alert");
-        // afiseazaMesaj();
+        document.querySelector(".sub").classList.add("alert");
+        document.querySelector(".sub").textContent = "Este randul jucatorului B!";
       }
       else {
-        // sub.classList.remove("alert");
+        document.querySelector(".sub").classList.remove("alert");
+        document.querySelector(".sub").textContent = "";
+        session = 2
         const zarA = document.querySelector(".zarA");
         zarA.classList.add("animate");
         setTimeout(() => {
           zarA.classList.remove("animate");
-          }, 500);
+        }, 500);
         let zarRez = aruncZa();
         let textJS = "src/images/dice" + zarRez +".png";
         
         document.querySelector(".zarA").setAttribute("src", textJS);
         document.querySelector(".zarA").setAttribute("alt", "zar cu numarul " +  zarRez);
-        }
-        session = 2
+      }
     }
-      
+    
     function jocB(){
-        // document.querySelectorAll("article").forEach(el => el.classList.remove("blur"));
-        if (session === 1) {
-          alert("Nu este randul tau!");
-          // sub.classList.add("alert");
-          // afiseazaMesaj();
+      document.querySelector(".rezultat").textContent = "";
+      if (session === 1) {
+        document.querySelector(".sub").classList.add("alert");
+        document.querySelector(".sub").textContent = "Este randul jucatorului A!";
+        
       }
       else {
-        // sub.classList.remove("alert");
+        document.querySelector(".sub").classList.remove("alert");
+        document.querySelector(".sub").textContent = "";
+        session = 1;
         const zarB = document.querySelector(".zarB");
         zarB.classList.add("animate");
          setTimeout(() => {
@@ -86,9 +90,8 @@
         document.querySelector(".zarB").setAttribute("src", textJS2);
         document.querySelector(".zarB").setAttribute("alt", "zar cu numarul " + zarRez);
         textMesaj = mesaj();
-        document.querySelector(".sub").textContent = textMesaj;
-        session = 1;
-        }
+        document.querySelector(".rezultat").textContent = textMesaj;
+      }
       }
     document.querySelector("#buttZarA").addEventListener("click", jocA);
     document.querySelector("#buttZarB").addEventListener("click", jocB);

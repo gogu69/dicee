@@ -33,12 +33,3 @@ function mesaj() {
 
     return mesaj;
 }
-
-function afiseazaMesaj() {
-//   const box = document.getElementById("notificare");
-  sub.textContent = "Nu este randul tau!";
-//   box.style.display = "block";
-//   box.style.background = "#ffd";
-//   box.style.padding = "10px";
-//   box.style.border = "1px solid #ccc";
-}
